@@ -1,0 +1,12 @@
+interface:
+  display_name: "Tag bookmarks"
+  short_description: "Tag bookmarks using your existing tags"
+  default_prompt: "Use $tag-bookmarks to tag my untagged bookmarks."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "raindrop"
+      description: "Raindrop.io MCP server"
+      transport: "streamable_http"
+      url: "https://api.raindrop.io/rest/v2/ai/mcp"

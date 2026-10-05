@@ -1,0 +1,12 @@
+interface:
+  display_name: "Raindrop.io help"
+  short_description: "Answers from the official Raindrop.io docs"
+  default_prompt: "Use $raindrop-help to explain how to import bookmarks into Raindrop.io."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "raindrop"
+      description: "Raindrop.io MCP server"
+      transport: "streamable_http"
+      url: "https://api.raindrop.io/rest/v2/ai/mcp"

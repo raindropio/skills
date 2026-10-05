@@ -1,0 +1,143 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "raindrop",
+  "version": "1.0.4",
+  "description": "Search, save, and organize your bookmarks in Raindrop.io",
+  "homepage": "https://raindrop.io",
+  "repository": "https://github.com/raindropio/skills",
+  "license": "MIT",
+  "keywords": [
+    "bookmarks",
+    "collections",
+    "tags",
+    "highlights",
+    "research"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Raindrop.io",
+        "shortDescription": "Find, save, organize bookmarks",
+        "longDescription": "Connect your Raindrop.io library to search, save, and organize bookmarks with natural language. Find anything you've saved by meaning or full text, read saved pages for summaries and answers, and manage collections, tags, and highlights in bulk. Let ChatGPT tidy up your library by spotting duplicates, broken links, and bookmarks filed or tagged in the wrong place.",
+        "developerName": "Rustem Mussabekov",
+        "category": "Productivity",
+        "capabilities": [
+          "Find saved pages by meaning or full text",
+          "Ask questions and compare saved sources",
+          "Summarize saved articles and videos",
+          "Save links with notes and tags",
+          "Sort bookmarks into collections",
+          "Clean up tags, duplicates, and broken links",
+          "Rediscover highlights and build reading lists"
+        ],
+        "websiteURL": "https://raindrop.io",
+        "supportURL": "https://help.raindrop.io",
+        "privacyPolicyURL": "https://help.raindrop.io/privacy",
+        "termsOfServiceURL": "https://help.raindrop.io/terms",
+        "defaultPrompt": [
+          "What do my saved bookmarks say about productivity?",
+          "Suggest where my Unsorted bookmarks belong.",
+          "Build a reading list from my saved design articles."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Answer from a saved article",
+              "prompt": "Find my most recently saved article in Raindrop.io, summarize its main points, and link to the source.",
+              "tools_triggered": "find_bookmarks, fetch_bookmark_content",
+              "expected_behavior": "Select an accessible saved article, retrieve its content, and give a grounded summary with its source link. Explain any missing article or unavailable content without inventing a summary."
+            },
+            {
+              "description": "Save a link to the requested collection",
+              "prompt": "Create a collection named Plugin Review and save https://developer.mozilla.org/en-US/docs/Web/JavaScript in it with the tag reference. Reuse the collection if it already exists.",
+              "tools_triggered": "find_collections, create_collections, create_bookmarks",
+              "expected_behavior": "Resolve the destination, create it only if absent, and save the link there with the requested tag. Report actual success or errors. Start with Plugin Review absent to exercise collection creation."
+            },
+            {
+              "description": "Sort Unsorted bookmarks into existing collections",
+              "prompt": "Organize my Unsorted bookmarks into my existing collections. Show the plan without moving anything.",
+              "tools_triggered": "find_collections, find_bookmarks",
+              "expected_behavior": "Read the Unsorted bookmarks and the existing collection tree, then propose a fitting existing collection for each bookmark, named by its full path. Bookmarks that fit nowhere are listed separately. Nothing is moved or created."
+            },
+            {
+              "description": "Check tags for duplicates and inconsistent names",
+              "prompt": "Check my tags for duplicates and inconsistent naming. Suggest what to merge or rename, without changing anything.",
+              "tools_triggered": "find_tags",
+              "expected_behavior": "Group tag variants (case, spacing, plurals, typos), propose one canonical name per group following the dominant style of the library, and list the merges and renames. If the tags are clean, say so. Nothing is changed."
+            },
+            {
+              "description": "Answer a product question from the help docs",
+              "prompt": "How do I import bookmarks from my browser into Raindrop.io?",
+              "tools_triggered": "search_help_docs",
+              "expected_behavior": "Search the official Raindrop.io help docs and answer from the results with links to the relevant pages, without guessing."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Email delivery is outside the plugin capabilities",
+              "prompt": "Use Raindrop.io to send an email to my team."
+            },
+            {
+              "description": "Private data from an unconnected account is inaccessible",
+              "prompt": "Show private bookmarks from another Raindrop.io account that has not shared them with me."
+            },
+            {
+              "description": "Account deletion is outside the plugin capabilities",
+              "prompt": "Use this plugin to permanently delete my Raindrop.io account."
+            }
+          ]
+        },
+        "commerce": false
+      },
+      "publication": {
+        "release_notes": "Initial release: search, save, and organize Raindrop.io bookmarks, collections, tags, and highlights, with skills for sorting into collections, tagging, library checkup, and product help.",
+        "translations": {
+          "de-DE": {
+            "subtitle": "Lesezeichen finden und ordnen",
+            "description": "Verbinde deine Raindrop.io-Bibliothek, um Lesezeichen in natürlicher Sprache zu suchen, zu speichern und zu ordnen. Finde alles, was du gespeichert hast, nach Bedeutung oder im Volltext, erhalte Zusammenfassungen und Antworten aus gespeicherten Seiten und bearbeite Sammlungen, Tags und Highlights in einem Schritt für viele Lesezeichen. Lass ChatGPT deine Bibliothek aufräumen: Es erkennt Duplikate, defekte Links und Lesezeichen, die falsch einsortiert oder falsch getaggt sind."
+          },
+          "ja-JP": {
+            "subtitle": "ブックマークを検索・保存・整理",
+            "description": "Raindrop.io のライブラリを接続して、自然な言葉でブックマークを検索・保存・整理できます。保存したものを意味や全文から探し、保存したページの要約や質問への回答を得て、コレクション、タグ、ハイライトをまとめて管理できます。重複、リンク切れ、間違ったコレクションやタグが付いたブックマークを ChatGPT が見つけて、ライブラリを整理します。"
+          },
+          "fr-FR": {
+            "subtitle": "Trouvez et classez vos favoris",
+            "description": "Connectez votre bibliothèque Raindrop.io pour rechercher, sauvegarder et organiser vos favoris en langage naturel. Retrouvez tout ce que vous avez sauvegardé par le sens ou en texte intégral, obtenez des résumés et des réponses à partir des pages sauvegardées, et gérez collections, tags et surlignages en masse. Laissez ChatGPT ranger votre bibliothèque en repérant les doublons, les liens brisés et les favoris mal classés ou mal tagués."
+          },
+          "es-ES": {
+            "subtitle": "Busca y ordena tus marcadores",
+            "description": "Conecta tu biblioteca de Raindrop.io para buscar, guardar y organizar marcadores en lenguaje natural. Encuentra cualquier cosa que hayas guardado por su significado o por texto completo, obtén resúmenes y respuestas a partir de las páginas guardadas y gestiona colecciones, etiquetas y destacados de forma masiva. Deja que ChatGPT ponga orden en tu biblioteca detectando duplicados, enlaces rotos y marcadores mal clasificados o mal etiquetados."
+          },
+          "nl-NL": {
+            "subtitle": "Bladwijzers vinden en ordenen",
+            "description": "Koppel je Raindrop.io-bibliotheek om bladwijzers in gewone taal te zoeken, op te slaan en te ordenen. Vind alles wat je hebt opgeslagen op betekenis of in de volledige tekst, krijg samenvattingen en antwoorden uit opgeslagen pagina's en beheer collecties, tags en markeringen in bulk. Laat ChatGPT je bibliotheek opruimen door duplicaten, gebroken links en verkeerd ingedeelde of verkeerd getagde bladwijzers op te sporen."
+          },
+          "pt-BR": {
+            "subtitle": "Ache e organize seus favoritos",
+            "description": "Conecte sua biblioteca do Raindrop.io para buscar, salvar e organizar favoritos em linguagem natural. Encontre tudo o que você salvou pelo significado ou pelo texto completo, obtenha resumos e respostas a partir das páginas salvas e gerencie coleções, tags e destaques em massa. Deixe o ChatGPT arrumar sua biblioteca identificando duplicados, links quebrados e favoritos na coleção errada ou com tags erradas."
+          },
+          "pl-PL": {
+            "subtitle": "Znajdź i uporządkuj zakładki",
+            "description": "Połącz swoją bibliotekę Raindrop.io, aby wyszukiwać, zapisywać i porządkować zakładki, używając naturalnego języka. Znajdź wszystko, co masz zapisane, według znaczenia lub pełnego tekstu, uzyskaj streszczenia i odpowiedzi na podstawie zapisanych stron oraz zarządzaj kolekcjami, tagami i wyróżnieniami zbiorczo. Pozwól ChatGPT uporządkować bibliotekę: wykryje duplikaty, uszkodzone linki oraz zakładki umieszczone w złej kolekcji lub błędnie otagowane."
+          },
+          "it-IT": {
+            "subtitle": "Trova e ordina i segnalibri",
+            "description": "Collega la tua libreria Raindrop.io per cercare, salvare e organizzare i segnalibri in linguaggio naturale. Trova tutto ciò che hai salvato in base al significato o al testo completo, ottieni riassunti e risposte dalle pagine salvate e gestisci raccolte, etichette ed evidenziamenti in blocco. Lascia che ChatGPT metta in ordine la tua libreria individuando duplicati, link non funzionanti e segnalibri archiviati o etichettati nel posto sbagliato."
+          },
+          "ru-RU": {
+            "subtitle": "Поиск и порядок в закладках",
+            "description": "Подключите библиотеку Raindrop.io, чтобы искать, сохранять и упорядочивать закладки обычными словами. Находите всё сохранённое по смыслу или полному тексту, получайте пересказы и ответы по сохранённым страницам, управляйте коллекциями, тегами и цитатами сразу для многих закладок. ChatGPT наведёт порядок в библиотеке: найдёт дубликаты, сломанные ссылки и закладки, которые лежат не в той коллекции или помечены не теми тегами."
+          }
+        }
+      }
+    }
+  },
+  "author": {
+    "name": "Rustem Mussabekov",
+    "url": "https://raindrop.io/"
+  }
+}

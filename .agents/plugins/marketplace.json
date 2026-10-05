@@ -1,0 +1,20 @@
+{
+  "name": "raindrop",
+  "interface": {
+    "displayName": "Raindrop.io"
+  },
+  "plugins": [
+    {
+      "name": "raindrop",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

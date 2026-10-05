@@ -1,0 +1,18 @@
+{
+  "name": "raindrop",
+  "description": "Official Raindrop.io plugin for AI agents: the Raindrop.io MCP server plus skills for organizing a bookmark library.",
+  "owner": {
+    "name": "Raindrop.io",
+    "email": "info@raindrop.io"
+  },
+  "plugins": [
+    {
+      "name": "raindrop",
+      "source": "./",
+      "description": "Raindrop.io",
+      "author": {
+        "name": "Raindrop.io"
+      }
+    }
+  ]
+}

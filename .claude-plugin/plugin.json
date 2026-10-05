@@ -1,0 +1,20 @@
+{
+  "name": "raindrop",
+  "displayName": "Raindrop.io",
+  "description": "Search, save, and organize your Raindrop.io bookmarks, collections, tags, and highlights, with skills for sorting into collections, tagging, library checkup, and product help.",
+  "version": "1.0.4",
+  "author": {
+    "name": "Raindrop.io",
+    "url": "https://raindrop.io"
+  },
+  "homepage": "https://help.raindrop.io/integrations/mcp",
+  "repository": "https://github.com/raindropio/skills",
+  "license": "MIT",
+  "keywords": [
+    "raindrop",
+    "bookmarks",
+    "collections",
+    "tags",
+    "highlights"
+  ]
+}

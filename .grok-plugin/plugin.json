@@ -1,0 +1,21 @@
+{
+  "name": "raindrop",
+  "description": "Raindrop.io plugin for Grok Build: search, save, and organize your bookmarks, with skills for sorting into collections, tagging, library checkup, and product help, plus the Raindrop.io MCP server.",
+  "version": "1.0.4",
+  "author": {
+    "name": "Raindrop.io",
+    "url": "https://raindrop.io"
+  },
+  "homepage": "https://help.raindrop.io/integrations/mcp",
+  "repository": "https://github.com/raindropio/skills",
+  "license": "MIT",
+  "keywords": [
+    "raindrop",
+    "bookmarks",
+    "collections",
+    "tags",
+    "highlights",
+    "grok",
+    "grok build"
+  ]
+}
