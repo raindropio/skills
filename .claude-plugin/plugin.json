@@ -8,6 +8,7 @@
     "url": "https://raindrop.io"
   },
   "homepage": "https://help.raindrop.io/integrations/mcp",
+  "privacyPolicyUrl": "https://help.raindrop.io/privacy",
   "repository": "https://github.com/raindropio/skills",
   "license": "MIT",
   "keywords": [
