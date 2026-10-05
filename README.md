@@ -35,14 +35,6 @@ Run this command in your terminal:
 codex plugin add raindrop@openai-curated
 ```
 
-### Grok Build
-
-Run this command in your terminal:
-
-```bash
-grok plugin install raindrop --trust
-```
-
 ### Gemini CLI
 
 Run this command in your terminal:

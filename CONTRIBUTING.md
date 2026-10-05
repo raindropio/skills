@@ -7,7 +7,7 @@ One plugin, one copy of everything. Every client reads the same `skills/` folder
 After changing a skill or a manifest, set the new version in every manifest that carries one:
 
 ```bash
-perl -pi -e 's/"version": "[0-9.]+"/"version": "1.0.5"/' plugin.json .claude-plugin/plugin.json .grok-plugin/plugin.json gemini-extension.json
+perl -pi -e 's/"version": "[0-9.]+"/"version": "1.0.5"/' plugin.json .claude-plugin/plugin.json gemini-extension.json
 ```
 
 ## ChatGPT package
