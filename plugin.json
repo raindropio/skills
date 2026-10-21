@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "raindrop",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Search, save, and organize your bookmarks in Raindrop.io",
   "homepage": "https://raindrop.io",
   "repository": "https://github.com/raindropio/skills",
@@ -19,7 +19,7 @@
         "displayName": "Raindrop.io",
         "shortDescription": "Find, save, organize bookmarks",
         "longDescription": "Connect your Raindrop.io library to search, save, and organize bookmarks with natural language. Find anything you've saved by meaning or full text, read saved pages for summaries and answers, and manage collections, tags, and highlights in bulk. Let ChatGPT tidy up your library by spotting duplicates, broken links, and bookmarks filed or tagged in the wrong place.",
-        "developerName": "Rustem Mussabekov",
+        "developerName": "Raindrop.io",
         "category": "Productivity",
         "capabilities": [
           "Find saved pages by meaning or full text",
@@ -91,7 +91,8 @@
             }
           ]
         },
-        "commerce": false
+        "commerce": false,
+        "demo_recording_url": "https://up.raindrop.io/web/trash/chatgpt-mcp.mov"
       },
       "publication": {
         "release_notes": "Initial release: search, save, and organize Raindrop.io bookmarks, collections, tags, and highlights, with skills for sorting into collections, tagging, library checkup, and product help.",
@@ -137,7 +138,7 @@
     }
   },
   "author": {
-    "name": "Rustem Mussabekov",
+    "name": "Raindrop.io",
     "url": "https://raindrop.io/"
   }
 }
