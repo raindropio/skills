@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.raindrop/mcp",
+  "title": "Raindrop.io",
+  "description": "Search, save, and organize your bookmarks in Raindrop.io",
+  "version": "1.0.0",
+  "websiteUrl": "https://help.raindrop.io/integrations/mcp",
+  "repository": {
+    "url": "https://github.com/raindropio/skills",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/raindropio/skills/main/assets/icon.png",
+      "mimeType": "image/png",
+      "sizes": ["128x128"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.raindrop.io/rest/v2/ai/mcp"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ Call `find_mistagged_bookmarks` with as many tags as it allows: those the user n
 
 ## Duplicates and broken links
 
-Use `find_bookmarks` with `is_duplicate` or `has_broken_link`. List what was found and let the user decide what to remove. `delete_bookmarks` moves bookmarks to Trash; deleting one that is already in Trash removes it permanently.
+Use `find_bookmarks` with `is_duplicate` or `has_broken_link`. List what was found and let the user decide what to remove. `delete_bookmarks` moves bookmarks to Trash; to permanently delete ones already in Trash, pass `permanently: true`.
 
 ## Empty Trash
 

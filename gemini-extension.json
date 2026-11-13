@@ -1,6 +1,6 @@
 {
   "name": "raindrop",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "mcpServers": {
     "raindrop": {
       "httpUrl": "https://api.raindrop.io/rest/v2/ai/mcp",

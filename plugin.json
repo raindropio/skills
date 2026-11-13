@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "raindrop",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Search, save, and organize your bookmarks in Raindrop.io",
   "homepage": "https://raindrop.io",
   "repository": "https://github.com/raindropio/skills",
